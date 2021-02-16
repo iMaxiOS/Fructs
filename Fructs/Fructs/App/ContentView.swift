@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var isShowingSetting: Bool = false
+    
     var body: some View {
         NavigationView {
             List {
@@ -19,7 +22,19 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Fruits")
+            .navigationBarItems(
+                trailing:
+                    Button(action: {
+                        isShowingSetting = true
+                    }) {
+                        Image(systemName: "slider.horizontal.3")
+                    } //: Button
+                    .sheet(isPresented: $isShowingSetting) {
+                        SettingsView()
+                    }
+            )
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
