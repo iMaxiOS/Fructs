@@ -1,5 +1,5 @@
 //
-//  FruitModel.swift
+//  Fruit.swift
 //  Fructs
 //
 //  Created by Maxim Granchenko on 16.02.2021.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct FruitModel: Identifiable {
+struct Fruit: Identifiable {
     var id = UUID()
     var title: String
-    var headling: String
+    var headline: String
     var image: String
-    var gradientColor: [Color]
+    var gradientColors: [Color]
     var description: String
     var nutrition: [String]
 }
